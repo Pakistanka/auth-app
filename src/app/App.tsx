@@ -1,10 +1,16 @@
 import React from 'react';
+import { QueryClientProvider } from '@tanstack/react-query';
+import { ConfigProvider } from 'antd';
+import { queryClient } from '@/shared/lib/query-client';
+import { AppRouter } from './router';
+import ruRU from 'antd/locale/ru_RU';
 
 export const App: React.FC = () => {
   return (
-    <div>
-      <h1>User Database App</h1>
-      <p>Application is starting...</p>
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <ConfigProvider locale={ruRU}>
+        <AppRouter />
+      </ConfigProvider>
+    </QueryClientProvider>
   );
 };
