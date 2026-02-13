@@ -1,4 +1,4 @@
-import { getUsers } from '../api/getUsers';
+import { getUsers, GetUsersParams } from '../api/getUsers';
 import { createUser } from '../api/createUser';
 import { updateUser } from '../api/updateUser';
 import { deleteUser } from '../api/deleteUser';
@@ -12,8 +12,8 @@ export const userService = {
   /**
    * Получить список всех пользователей
    */
-  getAll: async (): Promise<User[]> => {
-    return getUsers();
+  getAll: async (params?: GetUsersParams): Promise<User[]> => {
+    return getUsers(params);
   },
 
   /**

@@ -47,13 +47,9 @@ export const EditUserModal: React.FC<EditUserModalProps> = ({
       });
       onCancel();
     } catch (error: any) {
-      // Ошибки валидации формы обрабатываются автоматически Ant Design Form
-      // Ошибки API обрабатываются в хуке useUpdateUser через onError
       if (error?.errorFields) {
-        // Это ошибка валидации формы - Ant Design Form покажет её автоматически
         return;
       }
-      // Если это не ошибка валидации, но запрос не прошел - ошибка уже обработана в хуке
     }
   };
 
