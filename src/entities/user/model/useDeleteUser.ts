@@ -9,6 +9,7 @@ export const useDeleteUser = () => {
     mutationFn: (id: string) => userService.remove(id),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['users'] });
+      queryClient.invalidateQueries({ queryKey: ['users', 'infinite'] });
     },
     onError: (error: any) => {
       notification.error({

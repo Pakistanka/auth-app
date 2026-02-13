@@ -10,6 +10,7 @@ export const useCreateUser = () => {
     mutationFn: (data: CreateUserDto) => userService.create(data),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['users'] });
+      queryClient.invalidateQueries({ queryKey: ['users', 'infinite'] });
     },
     onError: (error: any) => {
       notification.error({

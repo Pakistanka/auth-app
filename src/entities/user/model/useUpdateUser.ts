@@ -11,6 +11,7 @@ export const useUpdateUser = () => {
       userService.update(id, data),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['users'] });
+      queryClient.invalidateQueries({ queryKey: ['users', 'infinite'] });
     },
     onError: (error: any) => {
       notification.error({
