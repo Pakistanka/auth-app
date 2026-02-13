@@ -104,6 +104,24 @@ npm run build
 
 Собранные файлы будут находиться в директории `dist/`.
 
+## � Деплой на Vercel
+
+Проект готов к деплою на **Vercel**:
+
+1. Подключите репозиторий к Vercel
+2. Vercel автоматически обнаружит `vercel.json` с правильной конфигурацией
+3. Проект будет собран и задеплоен автоматически
+
+**Конфигурация Vercel** (`vercel.json`):
+- Output Directory: `dist`
+- Build Command: `npm run build`
+- Rewrites настроены для SPA (React Router)
+
+**Альтернативно**, можно настроить вручную в Project Settings:
+- Build Command: `npm run build`
+- Output Directory: `dist`
+- Install Command: `npm install`
+
 ## � Скрипты
 
 | Скрипт | Описание |
